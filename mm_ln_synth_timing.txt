@@ -1,0 +1,106 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Wed Apr 16 21:54:22 2025
+| Host         : ECEUBUNTU2 running 64-bit unknown
+| Command      : report_timing -file mm_ln_synth_timing.txt
+| Design       : mm_ln
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.966ns  (required time - arrival time)
+  Source:                 layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@8.000ns period=16.000ns})
+  Destination:            layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@8.000ns period=16.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            16.000ns  (clk rise@16.000ns - clk rise@0.000ns)
+  Data Path Delay:        14.027ns  (logic 4.053ns (28.894%)  route 9.974ns (71.106%))
+  Logic Levels:           19  (CARRY4=7 LUT2=2 LUT3=2 LUT5=2 LUT6=6)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 16.924 - 16.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=7795, unset)         0.973     0.973    layer_norm_top_unit/layer_norm_unit/clk
+                         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 f  layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[10]/Q
+                         net (fo=10, unplaced)        1.008     2.499    layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg_n_0_[10]_76
+                         LUT6 (Prop_lut6_I0_O)        0.295     2.794 f  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_37/O
+                         net (fo=4, unplaced)         0.926     3.720    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_37_n_0
+                         LUT5 (Prop_lut5_I0_O)        0.124     3.844 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_19/O
+                         net (fo=1, unplaced)         0.902     4.746    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_19_n_0
+                         LUT6 (Prop_lut6_I2_O)        0.124     4.870 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_8/O
+                         net (fo=4, unplaced)         0.926     5.796    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_8_n_0
+                         LUT6 (Prop_lut6_I3_O)        0.124     5.920 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_12/O
+                         net (fo=4, unplaced)         0.926     6.846    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_12_n_0
+                         LUT3 (Prop_lut3_I0_O)        0.124     6.970 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_7/O
+                         net (fo=42, unplaced)        0.527     7.497    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_7_n_0
+                         LUT2 (Prop_lut2_I1_O)        0.116     7.613 f  layer_norm_top_unit/layer_norm_unit/quotient_r[15]_i_3/O
+                         net (fo=13, unplaced)        0.952     8.565    layer_norm_top_unit/layer_norm_unit/quotient_r[15]_i_3_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124     8.689 f  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__0_i_20/O
+                         net (fo=4, unplaced)         0.473     9.162    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__0_i_20_n_0
+                         LUT3 (Prop_lut3_I2_O)        0.116     9.278 f  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_16/O
+                         net (fo=4, unplaced)         0.926    10.204    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_16_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124    10.328 r  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_4/O
+                         net (fo=1, unplaced)         0.333    10.661    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_4_n_0
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    11.211 r  layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__1/CO[3]
+                         net (fo=1, unplaced)         0.000    11.211    layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.328 f  layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__2/CO[3]
+                         net (fo=69, unplaced)        1.008    12.336    layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__2_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.116    12.452 r  layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__2_i_7/O
+                         net (fo=1, unplaced)         0.449    12.901    layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__2_i_7_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.124    13.025 r  layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__2_i_1/O
+                         net (fo=1, unplaced)         0.000    13.025    layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__2_i_1_n_0
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376    13.401 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__2/CO[3]
+                         net (fo=1, unplaced)         0.000    13.401    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__2_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    13.518 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__3/CO[3]
+                         net (fo=1, unplaced)         0.000    13.518    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__3_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    13.635 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__4/CO[3]
+                         net (fo=1, unplaced)         0.000    13.635    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__4_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    13.752 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__5/CO[3]
+                         net (fo=1, unplaced)         0.000    13.752    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__5_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331    14.083 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__6/O[3]
+                         net (fo=1, unplaced)         0.618    14.701    layer_norm_top_unit/layer_norm_unit/qdiv/in9[31]
+                         LUT2 (Prop_lut2_I0_O)        0.299    15.000 r  layer_norm_top_unit/layer_norm_unit/remainder_r[31]_i_1/O
+                         net (fo=1, unplaced)         0.000    15.000    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r[31]
+                         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       16.000    16.000 r  
+                                                      0.000    16.000 r  clk (IN)
+                         net (fo=7795, unset)         0.924    16.924    layer_norm_top_unit/layer_norm_unit/clk
+                         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[31]/C
+                         clock pessimism              0.000    16.924    
+                         clock uncertainty           -0.035    16.889    
+                         FDRE (Setup_fdre_C_D)        0.077    16.966    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[31]
+  -------------------------------------------------------------------
+                         required time                         16.966    
+                         arrival time                         -15.000    
+  -------------------------------------------------------------------
+                         slack                                  1.966    
+
+
+
+

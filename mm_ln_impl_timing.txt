@@ -1,0 +1,103 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Wed Apr 16 22:03:19 2025
+| Host         : ECEUBUNTU2 running 64-bit unknown
+| Command      : report_timing -file mm_ln_impl_timing.txt
+| Design       : mm_ln
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.901ns  (required time - arrival time)
+  Source:                 layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[17]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@8.000ns period=16.000ns})
+  Destination:            layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@8.000ns period=16.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            16.000ns  (clk rise@16.000ns - clk rise@0.000ns)
+  Data Path Delay:        15.094ns  (logic 4.656ns (30.847%)  route 10.438ns (69.153%))
+  Logic Levels:           18  (CARRY4=6 LUT2=1 LUT3=4 LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 16.924 - 16.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=7775, unset)         0.973     0.973    layer_norm_top_unit/layer_norm_unit/clk
+    SLICE_X79Y32         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y32         FDRE (Prop_fdre_C_Q)         0.456     1.429 f  layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg[17]/Q
+                         net (fo=9, routed)           1.321     2.750    layer_norm_top_unit/layer_norm_unit/qdiv/divisor_r_reg_n_0_[17]_83
+    SLICE_X76Y34         LUT3 (Prop_lut3_I0_O)        0.152     2.902 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_29/O
+                         net (fo=4, routed)           0.849     3.751    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_29_n_0
+    SLICE_X79Y33         LUT5 (Prop_lut5_I1_O)        0.326     4.077 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_19/O
+                         net (fo=1, routed)           0.433     4.510    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_19_n_0
+    SLICE_X79Y33         LUT4 (Prop_lut4_I2_O)        0.124     4.634 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_8/O
+                         net (fo=4, routed)           0.886     5.520    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_8_n_0
+    SLICE_X86Y34         LUT6 (Prop_lut6_I3_O)        0.124     5.644 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_12/O
+                         net (fo=4, routed)           0.593     6.237    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_12_n_0
+    SLICE_X85Y34         LUT3 (Prop_lut3_I0_O)        0.124     6.361 r  layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_7/O
+                         net (fo=42, routed)          0.925     7.286    layer_norm_top_unit/layer_norm_unit/quotient_r[31]_i_7_n_0
+    SLICE_X78Y34         LUT4 (Prop_lut4_I1_O)        0.124     7.410 f  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__0_i_38/O
+                         net (fo=2, routed)           1.005     8.415    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__0_i_38_n_0
+    SLICE_X78Y34         LUT3 (Prop_lut3_I0_O)        0.154     8.569 f  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_25/O
+                         net (fo=3, routed)           0.830     9.399    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_25_n_0
+    SLICE_X79Y35         LUT3 (Prop_lut3_I0_O)        0.357     9.756 f  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_16/O
+                         net (fo=4, routed)           0.740    10.496    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_16_n_0
+    SLICE_X84Y35         LUT6 (Prop_lut6_I1_O)        0.327    10.823 r  layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_4/O
+                         net (fo=1, routed)           0.474    11.297    layer_norm_top_unit/layer_norm_unit/quotient_r1_carry__1_i_4_n_0
+    SLICE_X83Y35         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.526    11.823 r  layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    11.823    layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__1_n_0
+    SLICE_X83Y36         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.937 f  layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__2/CO[3]
+                         net (fo=69, routed)          1.358    13.295    layer_norm_top_unit/layer_norm_unit/qdiv/quotient_r1_carry__2_n_0
+    SLICE_X79Y35         LUT5 (Prop_lut5_I4_O)        0.150    13.445 r  layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__3_i_8/O
+                         net (fo=1, routed)           0.430    13.875    layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__3_i_8_n_0
+    SLICE_X80Y35         LUT6 (Prop_lut6_I4_O)        0.332    14.207 r  layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__3_i_1/O
+                         net (fo=1, routed)           0.000    14.207    layer_norm_top_unit/layer_norm_unit/remainder_r1_carry__3_i_1_n_0
+    SLICE_X80Y35         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    14.608 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    14.608    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__3_n_0
+    SLICE_X80Y36         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.722 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    14.722    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__4_n_0
+    SLICE_X80Y37         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    14.836 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    14.836    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__5_n_0
+    SLICE_X80Y38         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    15.170 r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r1_carry__6/O[1]
+                         net (fo=1, routed)           0.593    15.764    layer_norm_top_unit/layer_norm_unit/qdiv/in9[29]
+    SLICE_X82Y38         LUT2 (Prop_lut2_I1_O)        0.303    16.067 r  layer_norm_top_unit/layer_norm_unit/remainder_r[29]_i_1/O
+                         net (fo=1, routed)           0.000    16.067    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r[29]
+    SLICE_X82Y38         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       16.000    16.000 r  
+                                                      0.000    16.000 r  clk (IN)
+                         net (fo=7775, unset)         0.924    16.924    layer_norm_top_unit/layer_norm_unit/clk
+    SLICE_X82Y38         FDRE                                         r  layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[29]/C
+                         clock pessimism              0.000    16.924    
+                         clock uncertainty           -0.035    16.889    
+    SLICE_X82Y38         FDRE (Setup_fdre_C_D)        0.079    16.968    layer_norm_top_unit/layer_norm_unit/qdiv/remainder_r_reg[29]
+  -------------------------------------------------------------------
+                         required time                         16.968    
+                         arrival time                         -16.067    
+  -------------------------------------------------------------------
+                         slack                                  0.901    
+
+
+
+
